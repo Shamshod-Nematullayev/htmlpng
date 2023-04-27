@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        overflow: hidden;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 5px 15px;
+        margin: 0;
+        border-collapse: collapse;
+        border-collapse: collapse;
+      }
+      th {
+        background-color: rgb(244, 212, 246);
+      }
+      td:last-child {
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <table cellscasing="0">
+      <tr>
+        <th rowspan="2">№</th>
+        <th rowspan="2">Худуд</th>
+        <th colspan="2">Келиб тушган транзаксиялар</th>
+      </tr>
+      <tr>
+        <th>Сони</th>
+        <th>Сумма</th>
+      </tr>
+    </table>
+    <script>
+      const table = document.querySelector("table");
+      let summCount = 0;
+      let summPrice = 0;
+      arr.forEach((ins, i) => {
+        summCount += ins.tushumSoni;
+        summPrice += ins.summasi;
+        const tr = document.createElement("tr");
+        tr.innerHTML = `<td>${i + 1}</td><td>${ins.name}</td><td>${
+          ins.tushumSoni
+        }</td><td>${ins.summasi}</td>`;
+        table.appendChild(tr);
+      });
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td></td><td>Жами</td><td>${summCount}</td><td>${summPrice}</td>`;
+      table.appendChild(tr);
+    </script>
+  </body>
+</html>
